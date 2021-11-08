@@ -8,7 +8,7 @@ from FuncTools import TFRecordDataset
 # description = {"global_view": "float", "campaign": "int", "local_view": "float", "tce_planet_num": "int", "tce_depth": "float", "av_training_set": "byte", 
 # "tce_impact": "float", "tce_time0bk": "float", "tce_period": "float", "tce_duration": "float"}#{"image": "byte", "label": "float"}
 # dataset = TFRecordDataset(tfrecord_path, index_path, description)
-# loader = torch.utils.data.DataLoader(dataset, batch_size=10**5)
+# loader = torch.utils.data.DataLoader(dataset, batch_size=10**5) # batch size is just set to a number we know is larger than the dimension of the TfRecord
 
 # data = next(iter(loader))
 
@@ -22,33 +22,6 @@ from FuncTools import TFRecordDataset
 #             data["tce_time0bk"].numpy(),
 #             data["tce_period"].numpy(),
 #             data["tce_duration"].numpy()]
-
-
-
-
-# tfrecord_path = "train-00000-of-00008"
-# index_path = None
-# description = {"global_view": "float", "campaign": "int", "local_view": "float", "tce_planet_num": "int", "tce_depth": "float", "av_training_set": "byte", 
-# "tce_impact": "float", "tce_time0bk": "float", "tce_period": "float", "tce_duration": "float"}#{"image": "byte", "label": "float"}
-# dataset = TFRecordDataset(tfrecord_path, index_path, description)
-# loader = torch.utils.data.DataLoader(dataset, batch_size=10**5)
-
-# FullData = next(iter(loader))["global_view"].numpy()
-
-# for i in range(7):
-#     Index=i+1
-#     tfrecord_path = "train-0000" + str(Index) + "-of-00008"
-#     index_path = None
-#     description = {"global_view": "float", "campaign": "int", "local_view": "float", "tce_planet_num": "int", "tce_depth": "float", "av_training_set": "byte", 
-#     "tce_impact": "float", "tce_time0bk": "float", "tce_period": "float", "tce_duration": "float"}#{"image": "byte", "label": "float"}
-#     dataset = TFRecordDataset(tfrecord_path, index_path, description)
-#     loader = torch.utils.data.DataLoader(dataset, batch_size=10**5)
-
-#     data = next(iter(loader))
-
-#     ThisData = data["global_view"].numpy()
-
-#     FullData = numpy.concatenate((FullData, ThisData))
 
 
 
